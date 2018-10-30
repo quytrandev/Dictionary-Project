@@ -37,6 +37,7 @@
             this.txtNewWord = new System.Windows.Forms.TextBox();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnOK = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblEdit
@@ -85,8 +86,11 @@
             // 
             // cbEdit
             // 
+            this.cbEdit.DropDownHeight = 300;
+            this.cbEdit.DropDownWidth = 132;
             this.cbEdit.Font = new System.Drawing.Font("Arial", 20F);
             this.cbEdit.FormattingEnabled = true;
+            this.cbEdit.IntegralHeight = false;
             this.cbEdit.Location = new System.Drawing.Point(282, 140);
             this.cbEdit.Name = "cbEdit";
             this.cbEdit.Size = new System.Drawing.Size(374, 40);
@@ -111,7 +115,6 @@
             this.txtNewWord.Name = "txtNewWord";
             this.txtNewWord.Size = new System.Drawing.Size(374, 38);
             this.txtNewWord.TabIndex = 46;
-            this.txtNewWord.TextChanged += new System.EventHandler(this.txtNewWord_TextChanged);
             // 
             // btnCancel
             // 
@@ -145,14 +148,35 @@
             this.btnOK.Size = new System.Drawing.Size(102, 42);
             this.btnOK.TabIndex = 43;
             this.btnOK.UseVisualStyleBackColor = false;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             this.btnOK.MouseEnter += new System.EventHandler(this.btnOK_MouseEnter);
             this.btnOK.MouseLeave += new System.EventHandler(this.btnOK_MouseLeave);
+            // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.Color.Transparent;
+            this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.Purple;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Purple;
+            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Purple;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.ForeColor = System.Drawing.Color.Transparent;
+            this.btnClose.Image = global::Dictonary.Properties.Resources.close_24_purple1;
+            this.btnClose.Location = new System.Drawing.Point(621, 0);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(62, 27);
+            this.btnClose.TabIndex = 47;
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            this.btnClose.MouseEnter += new System.EventHandler(this.btnClose_MouseEnter);
+            this.btnClose.MouseLeave += new System.EventHandler(this.btnClose_MouseLeave);
             // 
             // ucEditWord
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Lavender;
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.txtNewWord);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCancel);
@@ -180,5 +204,6 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtNewWord;
+        private System.Windows.Forms.Button btnClose;
     }
 }
