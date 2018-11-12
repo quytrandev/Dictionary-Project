@@ -137,8 +137,10 @@ namespace Dictonary
                 txtMeaning.Enabled = false;
                 lblType.Enabled = false;
                 lblOr.Enabled = false;
+                txtMeaning.ResetText();
+
             }
-            
+
 
         }
 
@@ -216,6 +218,7 @@ namespace Dictonary
                             cbDelete.ResetText();
                             txtMeaning.ResetText();
                         }
+                       
                     }
 
                     catch (Exception exception)
@@ -264,6 +267,7 @@ namespace Dictonary
                         cbDelete.ResetText();
                         txtMeaning.ResetText();
                     }
+                    
                 }
                 catch (Exception exception)
                 {
@@ -271,18 +275,20 @@ namespace Dictonary
                 }
                 //}
             }
+            cbDelete.Enabled = true;
+            txtMeaning.Enabled = true;
+            lblOr.Enabled = true;
+            lblType.Enabled = true;
+            lblChoose.Enabled = true;
             cbDelete.Items.Clear();
             AddComboBox(BB, cbDelete);
         }
         public void reset()
         {
             cbDelete.Items.Clear();
+            BB = new BangBam();
             LoadDataFile();
             AddComboBox(BB, cbDelete);
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
             cbDelete.Enabled = true;
             txtMeaning.Enabled = true;
             lblOr.Enabled = true;
@@ -290,6 +296,20 @@ namespace Dictonary
             lblChoose.Enabled = true;
         }
 
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            txtMeaning.ResetText();
+            cbDelete.SelectedIndex=-1;
+            cbDelete.Enabled = true;
+            txtMeaning.Enabled = true;
+            lblOr.Enabled = true;
+            lblType.Enabled = true;
+            lblChoose.Enabled = true;
+           
+
+        }
         #endregion
+
+
     }
 }

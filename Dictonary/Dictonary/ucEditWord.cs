@@ -130,6 +130,7 @@ namespace Dictonary
         public void reset()
         {
             cbEdit.Items.Clear();
+            BB = new BangBam();
             LoadDataFile();
             AddComboBox(BB, cbEdit);
         }
@@ -209,7 +210,14 @@ namespace Dictonary
                 }
             }
         }
-        
+
         #endregion
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            txtMeaning.ResetText();
+            txtNewWord.ResetText();
+            //cbEdit.ResetText();
+        }
     }
 }
